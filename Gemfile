@@ -41,4 +41,10 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 
-gem 'devise'
+gem 'rails-i18n', '~> 4.0.3'
+
+gem 'devise', '~> 3.4.0'
+gem 'devise-i18n', '~> 0.11.2'
+gem 'devise-i18n-views', '~> 0.3.2'
+
+gem 'simple_form', '~> 3.1.0'
