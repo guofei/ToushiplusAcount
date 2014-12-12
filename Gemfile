@@ -48,3 +48,5 @@ gem 'devise-i18n', '~> 0.11.2'
 gem 'devise-i18n-views', '~> 0.3.2'
 
 gem 'simple_form', '~> 3.1.0'
+
+gem 'doorkeeper', '~> 1.4.0'
