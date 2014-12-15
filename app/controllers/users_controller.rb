@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  # before_action :doorkeeper_authorize!
   doorkeeper_for :all
   respond_to    :json
 
-  # GET /users/
   # GET /users/me.json
   def me
     respond_with current_resource_owner
