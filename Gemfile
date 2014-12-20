@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'byebug'
 
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
@@ -49,4 +50,4 @@ gem 'devise-i18n-views', '~> 0.3.2'
 
 gem 'simple_form', '~> 3.1.0'
 
-gem 'doorkeeper', '~> 1.4.0'
+gem 'doorkeeper', '~> 2.0.1'
