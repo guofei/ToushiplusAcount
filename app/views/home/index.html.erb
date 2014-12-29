@@ -5,10 +5,16 @@
 </div>
 
 <div class="col-xs-12">
-  <p>
-    <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path %>
-  </p>
-  <p>
-    <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path %>
-  </p>
+  <% if user_signed_in? -%>
+    <p>
+      <%= current_user.email -%>
+    </p>
+  <% else -%>
+    <p>
+      <%= link_to t('devise.sessions.new.sign_in'), new_user_session_path %>
+    </p>
+    <p>
+      <%= link_to t('devise.registrations.new.sign_up'), new_user_registration_path %>
+    </p>
+  <% end -%>
 </div>
