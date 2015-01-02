@@ -54,3 +54,6 @@ gem 'devise-i18n-views', '~> 0.3.2'
 gem 'simple_form', '~> 3.1.0'
 
 gem 'doorkeeper', '~> 2.0.1'
+
+# ec2
+gem 'io-console'
