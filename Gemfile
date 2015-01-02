@@ -57,3 +57,4 @@ gem 'doorkeeper', '~> 2.0.1'
 
 # ec2
 gem 'io-console'
+gem 'multi_json', '~> 1.10.1'
