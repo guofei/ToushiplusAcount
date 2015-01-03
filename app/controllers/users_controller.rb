@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :doorkeeper_authorize!
+  doorkeeper_for :all
   respond_to    :json
 
   # GET /users/me.json
