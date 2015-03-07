@@ -9,45 +9,63 @@
     <div class="panel-heading">
       ログイン
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="user_signin">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	<div class="form-inputs">
-	  <%= f.input :email, required: false, autofocus: true %>
-	  <%= f.input :password, required: false %>
-	  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-	</div>
+        <div class="form-inputs">
+          <%= f.input :email, required: false, autofocus: true %>
+        </div>
 
-	<div class="form-actions">
-	  <%= f.button :submit, "ログイン" %>
-	</div>
+        <div>
+          <h4>
+            投資+にパスワードを登録しましたか？
+          </h4>
+        </div>
+
+        <div class="form-inputs">
+          <div>
+            <label>
+              <input type="radio" name="sign_in_up" value="sign_up">
+              初めて利用します。
+            </label>
+          </div>
+          <div>
+            <div class="row">
+            <div class="col-xs-12">
+                <label>
+                  <input type="radio" name="sign_in_up" value="sign_in" checked=true>
+                  登録している方はパスワードを入力してください。
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-11">
+                <%= f.input :password, required: false %>
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                <div class="pull-right">
+                  <%= render "devise/shared/sign_in_up_links" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <div id="sign_up_button" style="display: none;">
+            <button type="button" id="sign_up" class="btn btn-default">ログイン</button>
+          </div>
+          <div id="sign_in_button">
+            <%= f.button :submit, "ログイン" %>
+          </div>
+        </div>
       <% end %>
-      <hr>
-      <%= render "devise/shared/sign_in_up_links" %>
-      <br />
+
+      <div id="form_sign_up" style="display:none;">
+        <%= form_tag new_user_registration_path, method: :get do %>
+          <%= hidden_field_tag 'email', value: '' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="col-xs-6">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      投資+始めませんか?登録する
-    </div>
-    <div class="panel-body">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-	<%= f.error_notification %>
-
-	<div class="form-inputs">
-	  <%= f.input :name, required: true, autofocus: true %>
-	  <%= f.input :email, required: true, autofocus: true %>
-	  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-	  <%= f.input :password_confirmation, required: true %>
-	</div>
-
-	<div class="form-actions">
-	  <%= f.button :submit, "ユーザー登録" %>
-	</div>
-      <% end %>
-    </div>
-  </div>
-</div>
