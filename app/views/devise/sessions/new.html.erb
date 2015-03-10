@@ -7,7 +7,7 @@
 <div class="col-xs-6">
   <div class="panel panel-info">
     <div class="panel-heading">
-      ログイン
+      ログイン・アカウント登録
     </div>
     <div class="panel-body" id="user_signin">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -52,7 +52,7 @@
 
         <div class="form-actions">
           <div id="sign_up_button" style="display: none;">
-            <button type="button" id="sign_up" class="btn btn-default">ログイン</button>
+            <button type="button" id="sign_up" class="btn btn-default">アカウント登録</button>
           </div>
           <div id="sign_in_button">
             <%= f.button :submit, "ログイン" %>
